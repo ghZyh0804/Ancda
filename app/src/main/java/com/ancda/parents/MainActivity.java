@@ -1,44 +1,70 @@
 package com.ancda.parents;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.TextView;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
+import android.util.Log;
 
-import com.ancda.parents.callback.JsonCallback;
-import com.ancda.parents.utils.Urls;
-import com.lzy.okgo.OkGo;
-import com.lzy.okgo.model.Response;
+import com.ancda.parents.ui.fragment.GanhuoFragment;
+import com.ancda.parents.ui.fragment.GirlFragment;
+import com.ancda.parents.ui.fragment.HomeFragment;
+import com.yinglan.alphatabs.AlphaTabsIndicator;
+import com.yinglan.alphatabs.OnTabChangedListner;
 
-import org.json.JSONObject;
+import java.util.ArrayList;
+import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+import butterknife.BindView;
+import cn.droidlover.xdroidmvp.base.XFragmentAdapter;
+import cn.droidlover.xdroidmvp.mvp.XActivity;
+
+public class MainActivity extends XActivity implements OnTabChangedListner {
+
+    List<Fragment> homepageFramentList = new ArrayList<>();
+    @BindView(R.id.vp_homepager)
+    ViewPager viewPager;
+
+    @BindView(R.id.ati_table)
+    AlphaTabsIndicator alphaTabsIndicator;
+
+    private XFragmentAdapter adapter;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        TextView tv = findViewById(R.id.tv);
+    public void initData(Bundle savedInstanceState) {
 
-        tv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        homepageFramentList.clear();
+        homepageFramentList.add(HomeFragment.newInstance());
+        homepageFramentList.add(GirlFragment.newInstance());
+        homepageFramentList.add(GanhuoFragment.newInstance());
+        //homepageFramentList.add(Test4Fragment.newInstance());
+       // homepageFramentList.add(Test5Fragment.newInstance());
 
-                OkGo.<JSONObject>get(Urls.URL_JSONOBJECT)//
-                        .execute(new JsonCallback<JSONObject>() {
-                            @Override
-                            public void onSuccess(Response<JSONObject> response) {
-                                System.out.println(response.body());
-                            }
+        if (adapter == null) {
+            adapter = new XFragmentAdapter(getSupportFragmentManager(), homepageFramentList, null);
+        }
+        viewPager.setAdapter(adapter);
+        viewPager.setOffscreenPageLimit(3);
 
-                            @Override
-                            public void onError(Response<JSONObject> response) {
-                                response.getException().printStackTrace();
-                            }
-                        });
+     // alphaTabsIndicator.setViewPager(viewPager);                     //设置ViewPager
+    //  alphaTabsIndicator.setOnTabChangedListner(this);
+
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    public Object newP() {
+        return null;
+    }
+
+    @Override
+    public void onTabSelected(int tabNum) {
+        viewPager.setCurrentItem(tabNum);
 
 
-            }
-        });
+        Log.d("AAA","角标:"+tabNum);
     }
 }

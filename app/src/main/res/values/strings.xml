@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Ancda</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_input_usernaem">输入手机号</string>
+    <string name="prompt_input_password">输入密码</string>
+    <string name="action_forget_password">忘记密码</string>
+    <string name="action_registered">立即注册</string>
+
+
+
+
+
+
+
+
+
+
+
 </resources>
