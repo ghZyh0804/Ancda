@@ -6,11 +6,27 @@
                 {
                     "source": "C:\\Users\\DELL-002\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\b96fb21fc4d99d82b5d27a3e6f1fd132\\res\\values-night-v8\\values-night-v8.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8",
+                        "startLines": "-1,-1,-1,-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1,-1,-1,-1"
+                    },
+                    "to": {
+                        "startLines": "21,22,23,24,25,26,27",
                         "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "55,125,209,293,389,491,593",
+                        "startOffsets": "949,1019,1103,1187,1283,1385,1487",
                         "endColumns": "69,83,83,95,101,101,93",
-                        "endOffsets": "120,204,288,384,486,588,682"
+                        "endOffsets": "1014,1098,1182,1278,1380,1482,1576"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\DELL-002\\Desktop\\Ancda\\Ancda\\mvp\\build\\intermediates\\bundles\\debug\\res\\values-night-v8\\values-night-v8.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,101,148,204,248,304,358,407,451,495,539,589",
+                        "endLines": "2,3,4,5,6,7,8,9,10,11,12,20",
+                        "endColumns": "45,46,55,43,55,53,48,43,43,43,49,12",
+                        "endOffsets": "96,143,199,243,299,353,402,446,490,534,584,944"
                     }
                 }
             ]
