@@ -38,4 +38,12 @@ public class Urls {
     public static final String URL_REDIRECT = SERVER + "redirect";
 
     public static final String URL_GANK_BASE = "http://gank.io/api/data/";
+
+
+
+    public static final String URL_LOGIN = "openuser/userlogin";
+
+    public static final String URL_LOGIN_SELECT_STUDENT = "openparent/changestudentv38";
+
+
 }

@@ -1,5 +1,7 @@
 package com.ancda.parents;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -20,6 +22,13 @@ import cn.droidlover.xdroidmvp.mvp.XActivity;
 
 public class MainActivity extends XActivity implements OnTabChangedListner {
 
+
+    public static void runActivity(Activity context) {
+        Intent intent = new Intent(context, MainActivity.class);
+        context.startActivity(intent);
+        context.finish();
+    }
+
     List<Fragment> homepageFramentList = new ArrayList<>();
     @BindView(R.id.vp_homepager)
     ViewPager viewPager;
@@ -37,7 +46,7 @@ public class MainActivity extends XActivity implements OnTabChangedListner {
         homepageFramentList.add(GirlFragment.newInstance());
         homepageFramentList.add(GanhuoFragment.newInstance());
         //homepageFramentList.add(Test4Fragment.newInstance());
-       // homepageFramentList.add(Test5Fragment.newInstance());
+        // homepageFramentList.add(Test5Fragment.newInstance());
 
         if (adapter == null) {
             adapter = new XFragmentAdapter(getSupportFragmentManager(), homepageFramentList, null);
@@ -45,8 +54,8 @@ public class MainActivity extends XActivity implements OnTabChangedListner {
         viewPager.setAdapter(adapter);
         viewPager.setOffscreenPageLimit(3);
 
-     // alphaTabsIndicator.setViewPager(viewPager);                     //设置ViewPager
-    //  alphaTabsIndicator.setOnTabChangedListner(this);
+        // alphaTabsIndicator.setViewPager(viewPager);                     //设置ViewPager
+        //  alphaTabsIndicator.setOnTabChangedListner(this);
 
     }
 
@@ -65,6 +74,6 @@ public class MainActivity extends XActivity implements OnTabChangedListner {
         viewPager.setCurrentItem(tabNum);
 
 
-        Log.d("AAA","角标:"+tabNum);
+        Log.d("AAA", "角标:" + tabNum);
     }
 }

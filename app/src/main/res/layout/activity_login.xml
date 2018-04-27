@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/login_bg"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -145,7 +146,7 @@
                 android:layout_height="wrap_content">
 
                 <Button
-                    android:id="@+id/btn_done"
+                    android:id="@+id/btn_login"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="27dp"
@@ -165,7 +166,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:padding="6dp"
-                    android:text="立即注册"
+                    android:text="@string/action_registered"
                     android:textColor="#40b69d"
                     android:textSize="15sp" />
 
@@ -179,7 +180,7 @@
                     android:background="#3FDAB8" />
 
                 <TextView
-                    android:id="@+id/lbl_forgot_password"
+                    android:id="@+id/tv_forgot_password"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="6dp"
@@ -192,5 +193,15 @@
         </LinearLayout>
     </ScrollView>
 
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:id="@+id/aiv_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        app:indicator="LineScale"
+        app:indicator_color="@color/colorPrimary" />
 
 </RelativeLayout>

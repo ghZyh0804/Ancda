@@ -67,6 +67,7 @@ public abstract class BasePagerFragment extends XLazyFragment<PBasePager> {
     public abstract void setLayoutManager(XRecyclerView recyclerView);
 
     public abstract String getType();
+
     public void showLoading() {
         contentLayout.showLoading();
     }

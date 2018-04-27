@@ -1,8 +1,14 @@
 package com.ancda.parents;
 
+import android.annotation.SuppressLint;
 import android.app.Application;
+import android.content.Context;
 import android.os.Build;
+import android.provider.Settings;
+import android.telephony.TelephonyManager;
+import android.text.TextUtils;
 
+import com.ancda.parents.utils.EncryptUtils;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheEntity;
 import com.lzy.okgo.cache.CacheMode;
@@ -14,6 +20,7 @@ import com.lzy.okgo.model.HttpHeaders;
 
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
@@ -35,10 +42,12 @@ import okhttp3.OkHttpClient;
 public class MyApp extends Application {
     private String mMobile_Agent_Aulae = "Android" + "/%s" + "," + "%s";
     public static boolean isParentApp = false;
+    private static MyApp sInstance;
 
     @Override
     public void onCreate() {
         super.onCreate();
+        sInstance = this;
         String loginType = this.getString(R.string.loginType);
         if (loginType.compareToIgnoreCase("parent") == 0) {
             isParentApp = true;
@@ -46,7 +55,6 @@ public class MyApp extends Application {
             isParentApp = false;
         }
 
-        // initOkGo();
 
         XApi.registerProvider(new NetProvider() {
 
@@ -97,14 +105,20 @@ public class MyApp extends Application {
         });
     }
 
+    public static MyApp getApplication() {
+        return sInstance;
+    }
 
-    private void initOkGo() {
+    public void initOkGo(String userName, String session) {
         HttpHeaders headers = new HttpHeaders();
         String MobileAgentAulae = String.format(mMobile_Agent_Aulae, Build.MODEL, "3.4");
         headers.put("Mobile-Agent", MobileAgentAulae);
         headers.put("Mobile-Name", android.os.Build.MANUFACTURER + "/" + android.os.Build.MODEL);
-
-
+        headers.put("User-Identity", EncryptUtils.encryptMD5ToString(userName) + "/" + getUUID());
+        if (!TextUtils.isEmpty(session)) {
+            headers.put("Cookie", "PHPSESSID=" + session);
+            headers.put("Session", session);
+        }
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
         //log相关
         HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor("OkGo");
@@ -181,4 +195,14 @@ public class MyApp extends Application {
         }
     }
 
+
+    public String getUUID() {
+        final TelephonyManager tm = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+        @SuppressLint("MissingPermission") String tmDevice = "" + tm.getDeviceId();
+        @SuppressLint("MissingPermission") String tmSerial = "" + tm.getSimSerialNumber();
+        String androidId = "" + Settings.Secure.getString(getContentResolver(), Settings.Secure.ANDROID_ID);
+        UUID deviceUuid = new UUID(androidId.hashCode(), ((long) tmDevice.hashCode() << 32) | tmSerial.hashCode());
+        String uniqueId = deviceUuid.toString();
+        return uniqueId;
+    }
 }

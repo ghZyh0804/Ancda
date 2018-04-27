@@ -8,6 +8,9 @@
     <string name="action_forget_password">忘记密码</string>
     <string name="action_registered">立即注册</string>
 
+    <string name="prompt_user_name_empty">请输入账号！</string>
+    <string name="prompt_user_password">请输入密码！</string>
+    <string name="prompt_user_name_error">请输入正确的手机号！</string>
 
 
 
