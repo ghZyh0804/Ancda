@@ -1,50 +1,43 @@
 package com.ancda.parents.ui.fragment;
 
-import android.widget.Toast;
+import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.view.View;
 
-import com.ancda.parents.adapter.HomeAdapter;
-import com.ancda.parents.model.GankResults;
+import com.ancda.parents.R;
+import com.ancda.parents.presenter.PBasePager;
 
-import cn.droidlover.xdroidmvp.base.SimpleRecAdapter;
-import cn.droidlover.xrecyclerview.RecyclerItemCallback;
-import cn.droidlover.xrecyclerview.XRecyclerView;
+import butterknife.BindView;
+import cn.droidlover.xdroidmvp.mvp.XLazyFragment;
 
 
-public class HomeFragment extends BasePagerFragment {
+public class HomeFragment extends XLazyFragment<PBasePager> {
 
-    HomeAdapter adapter;
-
-    @Override
-    public SimpleRecAdapter getAdapter() {
-        if (adapter == null) {
-            adapter = new HomeAdapter(context);
-            adapter.setRecItemClick(new RecyclerItemCallback<GankResults.Item, HomeAdapter.ViewHolder>() {
-                @Override
-                public void onItemClick(int position, GankResults.Item model, int tag, HomeAdapter.ViewHolder holder) {
-                    super.onItemClick(position, model, tag, holder);
-                    switch (tag) {
-                        case HomeAdapter.TAG_VIEW:
-                            Toast.makeText(context, model.getUrl(), Toast.LENGTH_SHORT).show();
-
-                            break;
-                    }
-                }
-            });
-        }
-        return adapter;
-    }
-
-    @Override
-    public void setLayoutManager(XRecyclerView recyclerView) {
-        recyclerView.verticalLayoutManager(context);
-    }
-
-    @Override
-    public String getType() {
-        return "all";
-    }
+    @BindView(R.id.fab)
+    FloatingActionButton floatingActionButton;
 
     public static HomeFragment newInstance() {
         return new HomeFragment();
+    }
+
+    @Override
+    public void initData(Bundle savedInstanceState) {
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+            }
+        });
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.fragment_home;
+    }
+
+    @Override
+    public PBasePager newP() {
+        return null;
     }
 }
