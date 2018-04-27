@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.ancda.parents.utils;
+package cn.droidlover.xdroidmvp.utils;
 
 import android.annotation.TargetApi;
 import android.content.Context;

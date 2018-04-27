@@ -60,7 +60,7 @@ public class LoginActivity extends XActivity implements View.OnClickListener {
 
     @Override
     public void initData(Bundle savedInstanceState) {
-
+        hideStatusBar();
         final View activityRootView = findViewById(R.id.login_bg);
         activityRootView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override

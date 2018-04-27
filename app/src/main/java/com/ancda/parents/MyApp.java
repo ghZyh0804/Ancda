@@ -32,6 +32,7 @@ import cn.droidlover.xdroidmvp.net.NetError;
 import cn.droidlover.xdroidmvp.net.NetProvider;
 import cn.droidlover.xdroidmvp.net.RequestHandler;
 import cn.droidlover.xdroidmvp.net.XApi;
+import cn.droidlover.xdroidmvp.utils.SharedPreferencesUtil;
 import okhttp3.CookieJar;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -54,8 +55,7 @@ public class MyApp extends Application {
         } else {
             isParentApp = false;
         }
-
-
+        initPrefs();
         XApi.registerProvider(new NetProvider() {
 
             @Override
@@ -104,6 +104,14 @@ public class MyApp extends Application {
             }
         });
     }
+
+    /**
+     * 初始化SharedPreference
+     */
+    protected void initPrefs() {
+        SharedPreferencesUtil.init(getApplicationContext(), getPackageName() + "_preference", Context.MODE_MULTI_PROCESS);
+    }
+
 
     public static MyApp getApplication() {
         return sInstance;

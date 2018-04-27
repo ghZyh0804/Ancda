@@ -40,7 +40,7 @@ public class MainActivity extends XActivity implements OnTabChangedListner {
 
     @Override
     public void initData(Bundle savedInstanceState) {
-
+        showStatusBar();
         homepageFramentList.clear();
         homepageFramentList.add(HomeFragment.newInstance());
         homepageFramentList.add(GirlFragment.newInstance());
