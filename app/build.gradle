@@ -56,4 +56,5 @@ dependencies {
     compile 'am.gaut.android.toolbarbutton:toolbarbutton:0.1.0'
 
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    compile 'com.github.anzaizai:EasyRefreshLayout:1.3.1'
 }
