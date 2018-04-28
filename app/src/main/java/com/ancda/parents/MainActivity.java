@@ -1,5 +1,6 @@
 package com.ancda.parents;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,7 +19,9 @@ import java.util.List;
 
 import butterknife.BindView;
 import cn.droidlover.xdroidmvp.base.XFragmentAdapter;
+import cn.droidlover.xdroidmvp.log.XLog;
 import cn.droidlover.xdroidmvp.mvp.XActivity;
+import io.reactivex.functions.Consumer;
 
 public class MainActivity extends XActivity implements OnTabChangedListner {
 
@@ -56,6 +59,17 @@ public class MainActivity extends XActivity implements OnTabChangedListner {
 
         // alphaTabsIndicator.setViewPager(viewPager);                     //设置ViewPager
         //  alphaTabsIndicator.setOnTabChangedListner(this);
+
+        getRxPermissions().request(Manifest.permission.CAMERA ,Manifest.permission.READ_EXTERNAL_STORAGE).subscribe(new Consumer<Boolean>() {
+            @Override
+            public void accept(Boolean aBoolean) throws Exception {
+
+
+                XLog.d("AAA","权限通过:"+aBoolean);
+
+
+            }
+        });
 
     }
 
