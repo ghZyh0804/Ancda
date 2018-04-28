@@ -55,4 +55,5 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
     compile 'am.gaut.android.toolbarbutton:toolbarbutton:0.1.0'
 
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
 }

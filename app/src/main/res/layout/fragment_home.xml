@@ -1,23 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <am.gaut.android.toolbarbutton.ToolbarButton
-        android:id="@+id/btn_toolbar_checkin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="?attr/borderlessButtonStyle"
-        android:background="@drawable/selector_toolbar_button"
-        android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Inverse"
-        android:paddingLeft="@dimen/toolbar_button_padding"
-        android:paddingRight="@dimen/toolbar_button_padding"
-        android:drawablePadding="@dimen/toolbar_button_padding"
-        android:drawableLeft="@drawable/ic_message_white_18dp"
-        android:drawableStart="@drawable/ic_message_white_18dp"
-        android:text="@string/app_name"
-        app:layout_anchorGravity="right|end" />
+    android:layout_height="match_parent">
 
 
-</android.support.design.widget.CoordinatorLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rl_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+</RelativeLayout>
