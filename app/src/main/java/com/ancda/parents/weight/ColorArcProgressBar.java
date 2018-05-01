@@ -29,6 +29,7 @@ public class ColorArcProgressBar extends View {
     private float centerX;  //圆心X坐标
     private float centerY;  //圆心Y坐标
 
+
     private Paint allArcPaint;
     private Paint progressPaint;
     private Paint vTextPaint;
