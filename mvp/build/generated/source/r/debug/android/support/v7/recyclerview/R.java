@@ -31,10 +31,10 @@ public final class R {
         public static int abc_action_bar_embed_tabs = 0x7f050001;
     }
     public static final class color {
-        public static int notification_action_color_filter = 0x7f060048;
-        public static int notification_icon_bg_color = 0x7f060049;
-        public static int ripple_material_light = 0x7f060054;
-        public static int secondary_text_default_material_light = 0x7f060056;
+        public static int notification_action_color_filter = 0x7f060054;
+        public static int notification_icon_bg_color = 0x7f060055;
+        public static int ripple_material_light = 0x7f060060;
+        public static int secondary_text_default_material_light = 0x7f060062;
     }
     public static final class dimen {
         public static int compat_button_inset_horizontal_material = 0x7f08004c;
@@ -121,13 +121,13 @@ public final class R {
         public static int status_bar_notification_info_overflow = 0x7f15002a;
     }
     public static final class style {
-        public static int TextAppearance_Compat_Notification = 0x7f160100;
-        public static int TextAppearance_Compat_Notification_Info = 0x7f160101;
-        public static int TextAppearance_Compat_Notification_Line2 = 0x7f160103;
-        public static int TextAppearance_Compat_Notification_Time = 0x7f160106;
-        public static int TextAppearance_Compat_Notification_Title = 0x7f160108;
-        public static int Widget_Compat_NotificationActionContainer = 0x7f160185;
-        public static int Widget_Compat_NotificationActionText = 0x7f160186;
+        public static int TextAppearance_Compat_Notification = 0x7f160101;
+        public static int TextAppearance_Compat_Notification_Info = 0x7f160102;
+        public static int TextAppearance_Compat_Notification_Line2 = 0x7f160104;
+        public static int TextAppearance_Compat_Notification_Time = 0x7f160107;
+        public static int TextAppearance_Compat_Notification_Title = 0x7f160109;
+        public static int Widget_Compat_NotificationActionContainer = 0x7f160186;
+        public static int Widget_Compat_NotificationActionText = 0x7f160187;
     }
     public static final class styleable {
         public static int[] FontFamily = { 0x7f040091, 0x7f040092, 0x7f040093, 0x7f040094, 0x7f040095, 0x7f040096 };

@@ -27,10 +27,10 @@ public final class R {
         public static int x_loadingLayoutId = 0x7f040167;
     }
     public static final class color {
-        public static int x_blue = 0x7f060061;
-        public static int x_green = 0x7f060062;
-        public static int x_red = 0x7f060063;
-        public static int x_yellow = 0x7f060064;
+        public static int x_blue = 0x7f060070;
+        public static int x_green = 0x7f060071;
+        public static int x_red = 0x7f060072;
+        public static int x_yellow = 0x7f060073;
     }
     public static final class dimen {
         public static int item_touch_helper_max_drag_scroll_per_frame = 0x7f080083;
