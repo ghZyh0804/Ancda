@@ -27,6 +27,8 @@ import android.telephony.TelephonyManager;
 import android.text.format.Formatter;
 import android.util.DisplayMetrics;
 
+import java.util.UUID;
+
 /**
  * @author yuyh.
  * @date 16/4/9.
@@ -161,5 +163,13 @@ public class DeviceUtils {
         int m = (int) ((ut / 60) % 60);
 
         return h + ":" + m;
+    }
+
+
+    /**
+     *获取随机的UUID
+     * */
+    public static String getUUID(){
+        return UUID.randomUUID().toString().replace("-", "");
     }
 }

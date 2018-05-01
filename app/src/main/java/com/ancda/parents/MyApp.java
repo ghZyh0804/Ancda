@@ -8,6 +8,7 @@ import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 
+import com.ancda.parents.utils.DeviceUtils;
 import com.ancda.parents.utils.EncryptUtils;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheEntity;
@@ -122,7 +123,7 @@ public class MyApp extends Application {
         String MobileAgentAulae = String.format(mMobile_Agent_Aulae, Build.MODEL, "3.4");
         headers.put("Mobile-Agent", MobileAgentAulae);
         headers.put("Mobile-Name", android.os.Build.MANUFACTURER + "/" + android.os.Build.MODEL);
-        headers.put("User-Identity", EncryptUtils.encryptMD5ToString(userName) + "/" + getUUID());
+        headers.put("User-Identity", EncryptUtils.encryptMD5ToString(userName) + "/" + DeviceUtils.getUUID());
         if (!TextUtils.isEmpty(session)) {
             headers.put("Cookie", "PHPSESSID=" + session);
             headers.put("Session", session);
