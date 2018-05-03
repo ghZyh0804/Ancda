@@ -37,13 +37,13 @@ public class GirlAdapter extends SimpleRecAdapter<GankResults.Item, GirlAdapter.
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         GankResults.Item item = data.get(position);
-
         ILFactory.getLoader().loadNet(holder.ivGirl, item.getUrl(), null);
-
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (getRecItemClick() != null) {
+
+
 
                 }
             }

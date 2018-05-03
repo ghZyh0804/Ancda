@@ -6,7 +6,7 @@ import android.view.View;
 import com.ancda.parents.R;
 import com.ancda.parents.model.GankResults;
 import com.ancda.parents.presenter.PBasePager;
-import com.ancda.parents.weight.StateView;
+import com.ancda.parents.weight.shinebuttonlib.StateView;
 
 import butterknife.BindView;
 import cn.droidlover.xdroidmvp.base.SimpleRecAdapter;

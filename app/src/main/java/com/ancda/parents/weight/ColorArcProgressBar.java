@@ -133,7 +133,7 @@ public class ColorArcProgressBar extends View {
 
     private void initView() {
 
-        diameter = 3 * getScreenWidth() / 5;
+        diameter = 2 * getScreenWidth() / 5;
         //弧形的矩阵区域
         bgRect = new RectF();
         bgRect.top = longdegree + progressWidth / 2 + DEGREE_PROGRESS_DISTANCE;

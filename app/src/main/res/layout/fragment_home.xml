@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -54,27 +55,39 @@
                 android:text="教师考勤" />
 
 
-
             <com.ancda.parents.weight.ColorArcProgressBar
+                android:id="@+id/cpb_progress"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
+                android:layout_below="@id/iv_teacher_bg"
                 android:layout_gravity="center_horizontal"
-                android:id="@+id/cpb_progress"
-                app:is_need_content="true"
-                app:front_color1="@color/colorAccent"
-                app:max_value="100"
-                app:back_width="10dp"
-                app:front_width="10dp"
-                app:total_engle="360"
-                app:is_need_unit="true"
-                app:string_unit="出勤率%"
+                android:layout_marginTop="5dp"
                 app:back_color="@color/chuck_colorAccent"
-                android:layout_marginBottom="150dp"
-                />
+                app:back_width="10dp"
+                app:front_color1="@color/colorAccent"
+                app:front_width="10dp"
+                app:is_need_content="true"
+                app:is_need_unit="true"
+                app:max_value="100"
+                app:string_unit="出勤率%"
+                app:total_engle="360" />
 
 
         </RelativeLayout>
 
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="480dp">
+
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/bar_chart1"
+                android:layout_width="match_parent"
+                android:layout_height="380dp"/>
+
+
+        </RelativeLayout>
 
     </LinearLayout>
 
