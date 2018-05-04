@@ -46,6 +46,9 @@ public class MainActivity extends XActivity implements OnTabChangedListner {
         homepageFramentList.clear();
         homepageFramentList.add(HomeFragment.newInstance());
         homepageFramentList.add(DynamicFragment.newInstance());
+        homepageFramentList.add(DynamicFragment.newInstance());
+        homepageFramentList.add(DynamicFragment.newInstance());
+        homepageFramentList.add(DynamicFragment.newInstance());
 
 
 
@@ -53,10 +56,10 @@ public class MainActivity extends XActivity implements OnTabChangedListner {
             adapter = new XFragmentAdapter(getSupportFragmentManager(), homepageFramentList, null);
         }
         viewPager.setAdapter(adapter);
-        viewPager.setOffscreenPageLimit(3);
+        viewPager.setOffscreenPageLimit(4);
 
-        // alphaTabsIndicator.setViewPager(viewPager);                     //设置ViewPager
-        //  alphaTabsIndicator.setOnTabChangedListner(this);
+         alphaTabsIndicator.setViewPager(viewPager);                     //设置ViewPager
+        alphaTabsIndicator.setOnTabChangedListner(this);
 
         getRxPermissions().request(Manifest.permission.CAMERA ,Manifest.permission.READ_EXTERNAL_STORAGE).subscribe(new Consumer<Boolean>() {
             @Override

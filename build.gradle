@@ -29,6 +29,8 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
+/*
+  不打印lint 检测信息
 allprojects {
 
     gradle.projectsEvaluated {
@@ -36,6 +38,6 @@ allprojects {
             options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
         }
     }
-}
+}*/
 
 
