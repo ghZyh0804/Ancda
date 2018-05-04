@@ -9,7 +9,6 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 
 import com.ancda.parents.ui.fragment.DynamicFragment;
-import com.ancda.parents.ui.fragment.GanhuoFragment;
 import com.ancda.parents.ui.fragment.HomeFragment;
 import com.yinglan.alphatabs.AlphaTabsIndicator;
 import com.yinglan.alphatabs.OnTabChangedListner;
@@ -47,9 +46,8 @@ public class MainActivity extends XActivity implements OnTabChangedListner {
         homepageFramentList.clear();
         homepageFramentList.add(HomeFragment.newInstance());
         homepageFramentList.add(DynamicFragment.newInstance());
-        homepageFramentList.add(GanhuoFragment.newInstance());
-        //homepageFramentList.add(Test4Fragment.newInstance());
-        // homepageFramentList.add(Test5Fragment.newInstance());
+
+
 
         if (adapter == null) {
             adapter = new XFragmentAdapter(getSupportFragmentManager(), homepageFramentList, null);

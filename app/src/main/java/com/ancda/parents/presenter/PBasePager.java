@@ -19,7 +19,7 @@ public class PBasePager extends XPresent<BasePagerFragment> {
 
 
     public void loadData(String type, final int page) {
-        getV().showLoading();
+       // getV().showLoading();
         Api.getGankService().getGankData(type, PAGE_SIZE, page)
                 .compose(XApi.<GankResults>getApiTransformer())
                 .compose(XApi.<GankResults>getScheduler())
@@ -32,7 +32,7 @@ public class PBasePager extends XPresent<BasePagerFragment> {
 
                     @Override
                     public void onNext(GankResults gankResults) {
-                        getV().showData(page, gankResults);
+                        //getV().showData(page, gankResults);
                     }
                 });
     }

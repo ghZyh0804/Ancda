@@ -19,6 +19,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    lintOptions {
+        abortOnError false
+    }
+
 }
 
 dependencies {
@@ -29,7 +34,6 @@ dependencies {
     compile rootProject.ext.dependencies["annotations"]
     compile rootProject.ext.dependencies["recyclerview-v7"]
 
-    compile rootProject.ext.dependencies["xrecyclerview"]
     compile rootProject.ext.dependencies["butterknife"]
     compile rootProject.ext.dependencies["glide"]
 
@@ -45,6 +49,8 @@ dependencies {
     compile rootProject.ext.dependencies["rxlifecycle-android"]
     compile rootProject.ext.dependencies["rxlifecycle-components"]
     compile rootProject.ext.dependencies["rxpermissions"]
+
+    compile rootProject.ext.dependencies["xstatecontroller"]
 }
 
 tasks.withType(JavaCompile) {

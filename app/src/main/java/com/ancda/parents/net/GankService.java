@@ -1,6 +1,5 @@
 package com.ancda.parents.net;
 
-import com.ancda.parents.model.DynamicFramentModel;
 import com.ancda.parents.model.GankResults;
 import com.ancda.parents.model.ParentLoginModel;
 
@@ -24,13 +23,6 @@ public interface GankService {
     Flowable<ParentLoginModel> parentLogin();
 
 
-   /*  params.put("classid", classesQueryString);
-            params.put("start", "" + nextListPosition);
-            params.put("count", "" + count);
-    // 角色ID 1-园长 2-教师 3-家长 当不带roleid或roleid为空获取所有。
-            params.put("roleid", roleid);*/
 
-    @GET("openaction/getclassaction?")
-    Flowable<DynamicFramentModel> getDynamicList(String classId, String startPos, String count, String roleid);
 
 }

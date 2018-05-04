@@ -1,46 +1,39 @@
 package com.ancda.parents.adapter;
 
+import android.support.v7.widget.AppCompatImageView;
+
 import com.ancda.parents.R;
-import com.ancda.parents.model.DynamicFramentModel;
+import com.ancda.parents.model.TestModel;
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 
 import java.util.List;
 
-public class DynamicFragmentAdapter extends BaseMultiItemQuickAdapter<DynamicFramentModel, BaseViewHolder>   {
+import cn.droidlover.xdroidmvp.imageloader.ILFactory;
+
+public class DynamicFragmentAdapter extends BaseMultiItemQuickAdapter<TestModel, BaseViewHolder> {
 
 
-     private static final int ITEM_VIEW_TYPE_01 = 1;
-     private static final int ITEM_VIEW_TYPE_02 = 2;
-     private static final int ITEM_VIEW_TYPE_03 = 3;
-
-
-    public DynamicFragmentAdapter(List<DynamicFramentModel> data) {
+    public DynamicFragmentAdapter(List<TestModel> data) {
         super(data);
-        addItemType(ITEM_VIEW_TYPE_01, R.layout.adapter_dynamic_new1);
-        addItemType(ITEM_VIEW_TYPE_02, R.layout.adapter_dynamic_new2);
-        addItemType(ITEM_VIEW_TYPE_03, R.layout.adapter_dynamic_new3);
+        addItemType(TestModel.ITEM_VIEW_TYPE_01, R.layout.item_test01);
+        addItemType(TestModel.ITEM_VIEW_TYPE_02, R.layout.item_test02);
+
     }
 
 
     @Override
-    protected void convert(BaseViewHolder helper, DynamicFramentModel item) {
+    protected void convert(BaseViewHolder helper, TestModel item) {
 
         switch (helper.getItemViewType()) {
-            case ITEM_VIEW_TYPE_01:
+            case TestModel.ITEM_VIEW_TYPE_01:
+                helper.setText(R.id.textView1, item.text);
                 break;
-            case ITEM_VIEW_TYPE_02:
-
-
+            case TestModel.ITEM_VIEW_TYPE_02:
+                ILFactory.getLoader().loadNet((AppCompatImageView) helper.getView(R.id.img), item.url, null);
                 break;
-            case ITEM_VIEW_TYPE_03:
 
-                break;
         }
-
-
-        helper.addOnClickListener(R.id.btnLike);
-        helper.addOnClickListener(R.id.btnComment);
 
 
     }
