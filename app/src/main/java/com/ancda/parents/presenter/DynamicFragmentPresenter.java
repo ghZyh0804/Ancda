@@ -24,6 +24,7 @@ public class DynamicFragmentPresenter extends XPresent<DynamicFragment> {
                     @Override
                     public void onSuccess(Response<DynamicFramentModel> response) {
 
+
                     }
 
                     @Override

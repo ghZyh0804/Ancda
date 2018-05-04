@@ -34,6 +34,7 @@ import cn.droidlover.xdroidmvp.net.NetProvider;
 import cn.droidlover.xdroidmvp.net.RequestHandler;
 import cn.droidlover.xdroidmvp.net.XApi;
 import cn.droidlover.xdroidmvp.utils.SharedPreferencesUtil;
+
 import okhttp3.CookieJar;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -104,6 +105,10 @@ public class MyApp extends Application {
                 return false;
             }
         });
+
+
+
+
     }
 
     /**

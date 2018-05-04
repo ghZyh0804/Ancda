@@ -3,8 +3,7 @@ package com.ancda.parents.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.ancda.parents.utils.DataInitConfig;
-import com.ancda.parents.utils.DateUtil;
+
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -93,61 +92,6 @@ public class DynamicTextDataItem implements Parcelable {
         }
     }
 
-    public void initStatic(String localId) {
-        id = localId;
-        schoolid = DataInitConfig.getInstance().getSchoolID();
-        publishteacherid = DataInitConfig.getInstance().getUserId();
-        publishname = DataInitConfig.getInstance().getNameForRelationship();
-        createdate = DateUtil.getCurrentTime("yyyy-MM-dd HH:mm:ss");
-        if(DataInitConfig.getInstance().isDirector()){
-            roleid = 1;
-        }else {
-            roleid = DataInitConfig.getInstance().isParentLogin() ? 3 : 2;
-        }
-        publishroleid = DataInitConfig.getInstance().isParentLogin() ? "10" : "11";
-        likecount = 0;
-        commentcount = 0;
-        shareurl = "";
-        avatarurl = DataInitConfig.getInstance().getAvatar();
-        likeList = "";
-        isLike = false;
-//        if (jo.has("audittype")) {
-//            audittype = jo.getString("audittype");
-//        }
-//        if (jo.has("publishteacherid")) {
-//            publishteacherid = jo.getString("publishteacherid");
-//        }
-//        if (jo.has("createdate")) {
-//            createdate = jo.getString("createdate");
-//        }
-//        if (jo.has("textcontent")) {
-//            textcontent = jo.getString("textcontent");
-//        }
-//        if (jo.has("likecount")) {
-//            likecount = jo.getInt("likecount");
-//        }
-//        if (jo.has("publishroleid")) {
-//            publishroleid = jo.getString("publishroleid");
-//        }
-//        if (jo.has("commentcount")) {
-//            commentcount = jo.getInt("commentcount");
-//        }
-//        if (jo.has("avatarurl")) {
-//            avatarurl = jo.getString("avatarurl");
-//        }
-//        if (jo.has("publishname")) {
-//            publishname = jo.getString("publishname");
-//        }
-//        if (jo.has("roleid")) {
-//            roleid = jo.getInt("roleid");
-//        }
-//        if (jo.has("isshield")) {
-//            isshield = jo.getInt("isshield");
-//        }
-//        if (jo.has("shareurl")) {
-//            setShareurl(jo.getString("shareurl"));
-//        }
-    }
 
     public int getRoleid() {
         return roleid;

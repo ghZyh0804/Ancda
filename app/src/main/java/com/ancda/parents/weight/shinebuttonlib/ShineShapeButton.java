@@ -17,6 +17,8 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.animation.LinearInterpolator;
 
+import com.ancda.parents.R;
+
 public class ShineShapeButton extends PorterShapeImageView  implements ShineButton{
     private static final String TAG = "ShineButton";
     private boolean isChecked = false;

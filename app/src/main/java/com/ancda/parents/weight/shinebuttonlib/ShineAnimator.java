@@ -3,8 +3,9 @@ package com.ancda.parents.weight.shinebuttonlib;
 import android.animation.ValueAnimator;
 import android.graphics.Canvas;
 
-import com.hugbio.ei.Ease;
-import com.hugbio.ei.EasingInterpolator;
+import com.ancda.parents.weight.shinebuttonlib.ei.Ease;
+import com.ancda.parents.weight.shinebuttonlib.ei.EasingInterpolator;
+
 
 public class ShineAnimator extends ValueAnimator {
 

@@ -13,8 +13,8 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.WindowManager;
 
-import com.hugbio.ei.Ease;
-import com.hugbio.ei.EasingInterpolator;
+import com.ancda.parents.weight.shinebuttonlib.ei.Ease;
+import com.ancda.parents.weight.shinebuttonlib.ei.EasingInterpolator;
 
 import java.util.Random;
 
