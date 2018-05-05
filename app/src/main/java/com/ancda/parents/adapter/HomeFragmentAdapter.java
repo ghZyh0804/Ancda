@@ -18,6 +18,11 @@ public class HomeFragmentAdapter extends BaseQuickAdapter<String, BaseViewHolder
 
     @Override
     protected void convert(BaseViewHolder helper, String item) {
-        helper.setText(R.id.text, item);
+
+        if(helper.getAdapterPosition()==5){
+            helper.setText(R.id.text, "更多");
+        }else{
+            helper.setText(R.id.text, item);
+        }
     }
 }

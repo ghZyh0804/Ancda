@@ -1,96 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="45dp"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:background="@color/colorPrimaryDark"
-            android:gravity="center">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="幼儿园"
-                android:textColor="@color/white"
-                android:textSize="17sp" />
-
-        </LinearLayout>
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rv_list"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:background="#F1F1F1" />
-
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="250dp">
-
-            <ImageView
-                android:id="@+id/iv_teacher_bg"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/ic_launcher_background" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="6dp"
-                android:layout_toRightOf="@+id/iv_teacher_bg"
-                android:text="教师考勤" />
-
-
-            <com.ancda.parents.weight.ColorArcProgressBar
-                android:id="@+id/cpb_progress"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_below="@id/iv_teacher_bg"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="5dp"
-                app:back_color="@color/chuck_colorAccent"
-                app:back_width="10dp"
-                app:front_color1="@color/colorAccent"
-                app:front_width="10dp"
-                app:is_need_content="true"
-                app:is_need_unit="true"
-                app:max_value="100"
-                app:string_unit="出勤率%"
-                app:total_engle="360" />
-
-
-        </RelativeLayout>
-
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="480dp">
-
-
-            <com.github.mikephil.charting.charts.BarChart
-                android:id="@+id/bar_chart1"
-                android:layout_width="match_parent"
-                android:layout_height="380dp"/>
-
-
-        </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="幼儿园"
+            android:textColor="@color/white"
+            android:textSize="17sp" />
 
     </LinearLayout>
 
-</android.support.v4.widget.NestedScrollView>
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
 
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="#F1F1F1" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp">
+
+                <ImageView
+                    android:id="@+id/iv_teacher_bg"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/ic_launcher_background" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:layout_toRightOf="@+id/iv_teacher_bg"
+                    android:text="教师考勤" />
+
+
+                <com.ancda.parents.weight.ColorArcProgressBar
+                    android:id="@+id/cpb_progress"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_below="@id/iv_teacher_bg"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="5dp"
+                    app:back_color="@color/chuck_colorAccent"
+                    app:back_width="10dp"
+                    app:front_color1="@color/colorAccent"
+                    app:front_width="10dp"
+                    app:is_need_content="true"
+                    app:is_need_unit="true"
+                    app:max_value="100"
+                    app:string_unit="出勤率%"
+                    app:total_engle="360" />
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="480dp">
+
+
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/bar_chart1"
+                    android:layout_width="match_parent"
+                    android:layout_height="380dp" />
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+</LinearLayout>
