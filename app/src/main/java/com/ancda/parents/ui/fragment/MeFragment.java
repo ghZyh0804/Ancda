@@ -2,7 +2,6 @@ package com.ancda.parents.ui.fragment;
 
 import android.os.Bundle;
 
-import com.ancda.parents.MainActivity;
 import com.ancda.parents.R;
 import com.ancda.parents.presenter.PBasePager;
 
@@ -15,7 +14,7 @@ public class MeFragment extends XLazyFragment<PBasePager> {
 
     @Override
     public void initData(Bundle savedInstanceState) {
-        ((MainActivity) getActivity()).transparent19and20();
+
     }
 
     @Override

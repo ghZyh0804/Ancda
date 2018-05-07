@@ -52,9 +52,8 @@ public class MainActivity extends XActivity implements OnTabChangedListner {
         viewPager.setAdapter(adapter);
         viewPager.setOffscreenPageLimit(4);
 
-        alphaTabsIndicator.setViewPager(viewPager);                     //设置ViewPager
+        alphaTabsIndicator.setViewPager(viewPager); //设置ViewPager
         alphaTabsIndicator.setOnTabChangedListner(this);
-
     }
 
     @Override

@@ -8,6 +8,8 @@ import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 
+import com.ancda.parents.model.ParentLoginModel;
+import com.ancda.parents.model.StudentInfoModel;
 import com.ancda.parents.utils.DeviceUtils;
 import com.ancda.parents.utils.EncryptUtils;
 import com.lzy.okgo.OkGo;
@@ -34,7 +36,6 @@ import cn.droidlover.xdroidmvp.net.NetProvider;
 import cn.droidlover.xdroidmvp.net.RequestHandler;
 import cn.droidlover.xdroidmvp.net.XApi;
 import cn.droidlover.xdroidmvp.utils.SharedPreferencesUtil;
-
 import okhttp3.CookieJar;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
@@ -46,6 +47,11 @@ public class MyApp extends Application {
     private String mMobile_Agent_Aulae = "Android" + "/%s" + "," + "%s";
     public static boolean isParentApp = false;
     private static MyApp sInstance;
+
+
+    public static ParentLoginModel parentLoginModel;
+    public static StudentInfoModel studentInfoModel;
+
 
     @Override
     public void onCreate() {

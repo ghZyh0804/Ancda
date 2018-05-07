@@ -36,6 +36,7 @@ public class LoginPresenter extends XPresent<LoginActivity> {
                     public void onSuccess(Response<ParentLoginModel> response) {
                         getV().loginSuccessful();
                         ParentLoginModel parentLoginModel = response.body();
+                        MyApp.parentLoginModel=parentLoginModel;
                         ParentLoginModel.DataBean dataBean = parentLoginModel.getData().get(0);
                         List<ParentLoginModel.DataBean.StudentsBean> students = dataBean.getStudents();
                         getV().showSlectStudentDialog(students);
@@ -69,6 +70,8 @@ public class LoginPresenter extends XPresent<LoginActivity> {
                     public void onSuccess(Response<StudentInfoModel> response) {
                         getV().loginSuccessful();
                         StudentInfoModel body = response.body();
+
+                        MyApp.studentInfoModel=body;
                         if ("0".equals(body.getResult())) {
                             getV().getHomePage();
                         }

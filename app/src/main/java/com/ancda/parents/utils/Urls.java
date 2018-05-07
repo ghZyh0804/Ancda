@@ -45,6 +45,6 @@ public class Urls {
     public static final String URL_LOGIN_SELECT_STUDENT = "openparent/changestudentv38";
 
 
-    public static final String URL_DYNAMIC_LIST = "openaction/getclassaction";
+    public static final String URL_DYNAMIC_LIST = "openaction/getusersactions";
 
 }
