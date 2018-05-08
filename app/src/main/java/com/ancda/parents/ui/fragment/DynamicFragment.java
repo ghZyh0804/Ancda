@@ -5,7 +5,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.ajguan.library.EasyRefreshLayout;
-import com.ancda.parents.MyApp;
 import com.ancda.parents.R;
 import com.ancda.parents.adapter.DynamicFragmentAdapter;
 import com.ancda.parents.model.TestModel;
@@ -97,7 +96,7 @@ public class DynamicFragment extends XLazyFragment<DynamicFragmentPresenter> {
 
     private void inData() {
 
-        getP().loadData(MyApp.studentInfoModel.getData().get(0).getBaby().getClassid(),"0","3");
+       // getP().loadData(MyApp.studentInfoModel.getData().get(0).getBaby().getClassid(),"0","");
 
         List<TestModel> testModels = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
