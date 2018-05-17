@@ -62,8 +62,8 @@
 
                 <com.ancda.parents.weight.ColorArcProgressBar
                     android:id="@+id/cpb_progress"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_below="@id/iv_teacher_bg"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="5dp"

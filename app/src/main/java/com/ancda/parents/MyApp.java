@@ -20,6 +20,7 @@ import com.lzy.okgo.cookie.store.DBCookieStore;
 import com.lzy.okgo.https.HttpsUtils;
 import com.lzy.okgo.interceptor.HttpLoggingInterceptor;
 import com.lzy.okgo.model.HttpHeaders;
+import com.mob.MobSDK;
 
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
@@ -56,6 +57,8 @@ public class MyApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        MobSDK.init(this);
         sInstance = this;
         String loginType = this.getString(R.string.loginType);
         if (loginType.compareToIgnoreCase("parent") == 0) {

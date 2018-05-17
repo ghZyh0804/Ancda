@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'com.mob.sdk'
 android {
     compileSdkVersion 27
     defaultConfig {
@@ -39,7 +39,36 @@ android {
     }
 }
 
+MobSDK {
+    appKey "25c4ed7d700c1"
+    appSecret "aa7c14a91a461df7f2406b0f5a29fac0"
 
+    ShareSDK {
+        //平台配置信息
+        devInfo {
+            SinaWeibo {
+                appKey "568898243"
+                appSecret "38a4f8204cc784f81f9f0daaf31e02e3"
+                callbackUri "http://www.sharesdk.cn"
+                shareByAppClient false
+            }
+            Wechat {
+                appId "wx183d2a77ed83c8f4"
+                appSecret "64020361b8ec4c99936c0e3999a9f249"
+            }
+            QQ {
+                appId "1104800844"
+                appKey "UQ99VMogbtRkJOz7"
+            }
+            Facebook {
+                appKey "1412473428822331"
+                appSecret "a42f4f3f867dc947b9ed6020c2e93558"
+                callbackUri "https://mob.com"
+            }
+        }
+    }
+
+}
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
