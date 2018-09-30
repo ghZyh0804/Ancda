@@ -62,7 +62,6 @@ public class DynamicFragment extends XLazyFragment<DynamicFragmentPresenter> {
                 easyRefreshLayout.loadMoreComplete(new EasyRefreshLayout.Event() {
                     @Override
                     public void complete() {
-
                         dynamicFragmentAdapter.addData(testModels);
                     }
                 }, 500);
@@ -70,7 +69,6 @@ public class DynamicFragment extends XLazyFragment<DynamicFragmentPresenter> {
 
             @Override
             public void onRefreshing() {
-
                 List<TestModel> testModels = new ArrayList<>();
                 for (int i = 0; i < 10; i++) {
                     TestModel testModel = new TestModel();
@@ -88,8 +86,6 @@ public class DynamicFragment extends XLazyFragment<DynamicFragmentPresenter> {
                 easyRefreshLayout.refreshComplete();
             }
         });
-
-
         inData();
 
     }

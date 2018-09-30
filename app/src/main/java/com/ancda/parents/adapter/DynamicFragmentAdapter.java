@@ -1,15 +1,11 @@
 package com.ancda.parents.adapter;
 
-import android.support.v7.widget.AppCompatImageView;
-
 import com.ancda.parents.R;
 import com.ancda.parents.model.TestModel;
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 
 import java.util.List;
-
-import cn.droidlover.xdroidmvp.imageloader.ILFactory;
 
 public class DynamicFragmentAdapter extends BaseMultiItemQuickAdapter<TestModel, BaseViewHolder> {
 
@@ -30,7 +26,7 @@ public class DynamicFragmentAdapter extends BaseMultiItemQuickAdapter<TestModel,
                 helper.setText(R.id.textView1, item.text);
                 break;
             case TestModel.ITEM_VIEW_TYPE_02:
-                ILFactory.getLoader().loadNet((AppCompatImageView) helper.getView(R.id.img), item.url, null);
+                //ILFactory.getLoader().loadNet((AppCompatImageView) helper.getView(R.id.img), item.url, null);
                 break;
 
         }
